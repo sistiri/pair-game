@@ -2,6 +2,7 @@
 
 
 clearStopper();
+setNewOrder();
 
 (function clickHandler() {
     const cards = document.querySelectorAll('.card');
@@ -44,7 +45,7 @@ function checkIfPair() {
     const visibleCards = document.querySelectorAll('.visible');
     const image1 = visibleCards[0].getAttribute('src');
     const image2 = visibleCards[1].getAttribute('src');
-    console.log(image1 == image2);
+    // console.log(image1 == image2);
     return image1 == image2;
 
 };
@@ -84,8 +85,12 @@ function closeAllCards() {
             openCards[i].parentElement.classList.remove('no-click');
         };
         clearStopper();
+        setNewOrder();
     }, 5000);
 };
+
+
+// STOPPER
 
 const padNumbers = (num) => num < 10 ? `0${num}` : `${num}`;
 
@@ -114,6 +119,28 @@ function clearStopper() {
 }
 
 
+// SHUFFLE CARDS
 
+function getImageURLs() {
+    const cardImages = document.querySelectorAll('img');
+    const cardImageURLs = [];
+    for (let i = 0; i < cardImages.length; i += 1) {
+        cardImageURLs.push(cardImages[i].getAttribute('src'));
+    }
+       return cardImageURLs;
+};
 
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+    return array;
+};
 
+function setNewOrder() {
+
+    const newOrderArray = shuffle(getImageURLs());
+    const cards = document.querySelectorAll('img');
+
+    for (let i = 0; i < cards.length; i += 1) {
+        cards[i].setAttribute('src', newOrderArray[i]);
+    }
+};
