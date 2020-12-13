@@ -3,11 +3,12 @@
   }
 
 :root {
-  
     margin: 0;
     padding: 0;
     border: none;
 }
+
+
 
 html {
     position: absolute;
@@ -22,10 +23,12 @@ body {
     padding: 0;
     border: none;
     width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(169,88,163);
 }
 
 h1, h3 {
-    background-color: rgb(169,88,163);
+    
     color: rgb(236, 236, 236);
     text-align: center;
     margin: 0;
@@ -47,7 +50,7 @@ h3 {
 }
 
 .game-head {
-    background-color: rgb(169,88,163);
+    
     color: rgb(236, 236, 236);
     text-align: center;
     margin: 0;
@@ -57,7 +60,7 @@ h3 {
 }
 
 .stopper {
-    background-color: rgb(169,88,163);
+    
     color: rgb(236, 236, 236);
     text-align: center;
     margin: 0;
@@ -74,7 +77,6 @@ h3 {
     display: flex;
     flex-flow: row wrap;
     width: 100vw;
-    background-color: rgb(169,88,163);
     color: rgb(236, 236, 236);
     align-self: center;
     align-content: center;
@@ -148,4 +150,6 @@ img {
 
 .no-click {
     pointer-events: none;
+    transition: none;
+    transform: none;
 }

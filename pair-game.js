@@ -41,13 +41,11 @@ function numberOfOpenCards() {
 };
 
 function checkIfPair() {
-
     const visibleCards = document.querySelectorAll('.visible');
     const image1 = visibleCards[0].getAttribute('src');
     const image2 = visibleCards[1].getAttribute('src');
     // console.log(image1 == image2);
     return image1 == image2;
-
 };
 
 function makeFrontVisible(event) {
@@ -57,7 +55,8 @@ function makeFrontVisible(event) {
 
 
 function closeTwoCards() {
-    setTimeout(function () {
+    const to = setTimeout(function () {
+        clearTimeout(to);
         const visibleCards = document.querySelectorAll("img.visible");
         visibleCards[0].classList.remove('visible');
         visibleCards[0].classList.add('hidden');
@@ -114,7 +113,7 @@ function startStopper() {
 };
 
 function clearStopper() {
-    document.querySelector('.stopper').textContent = null;
+    // document.querySelector('.stopper').textContent = null;
     document.querySelector('.stopper').textContent = '00:00'
 }
 
